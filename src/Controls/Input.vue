@@ -44,15 +44,7 @@ export default {
       default: false,
     },
   },
-
-  components: {
-
-  }
 }
 </script>
 
-<style>
-.input {
-
-}
-</style>
+<style></style>
