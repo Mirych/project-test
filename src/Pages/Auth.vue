@@ -58,21 +58,6 @@
                         @click="submit"
                     >Sign in</button>
                   </form>
-
-<!--                  <form action="#" name="#" class="authorization__form form-authorization">-->
-<!--&lt;!&ndash;                    <label for="authorization-email">&ndash;&gt;-->
-<!--&lt;!&ndash;                      <div class="form-authorization__label">Email</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                      <input type="text" class="form-authorization__input form-authorization__input_error" id="authorization-email" name="email" placeholder="name@company.com" autocomplete="off">&ndash;&gt;-->
-<!--&lt;!&ndash;                      <div class="form-authorization__error-text">Invalid email format</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </label>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <label for="authorization-password">&ndash;&gt;-->
-<!--&lt;!&ndash;                      <div class="form-authorization__label">Password</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                      <input type="text" class="form-authorization__input" id="authorization-password" name="password" placeholder="Input your password" autocomplete="off">&ndash;&gt;-->
-<!--&lt;!&ndash;                      &lt;!&ndash; <div class="form-authorization__error-text">Password must be between 8 and 20 characters</div> &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;                    </label>&ndash;&gt;-->
-<!--                    <a href="/forgot.html" class="form-authorization__link">Forgot password?</a>-->
-<!--                    <button type="submit" class="form-authorization__button">Sign in</button>-->
-<!--                  </form>-->
                 </div>
                 <div class="authorization__image">
                   <img src="@/assets/main-image.svg" alt="men">
@@ -111,6 +96,7 @@ export default {
   },
 
   computed: {
+    // Валидации почты и пароля
     isValide() {
       return {
         email: /^[^@]+@\w+(\.\w+)+\w$/.test(this.email),
@@ -120,6 +106,7 @@ export default {
   },
 
   methods: {
+    // Отправка данных
     submit() {
       const apiUrl = 'https://api.corecruiter.org/api/user/auth'
       const {email, password} = this
@@ -127,7 +114,6 @@ export default {
         email,
         password
       }
-
 
       fetch(apiUrl, {
         method: 'POST',
